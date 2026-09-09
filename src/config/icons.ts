@@ -1,0 +1,82 @@
+/**
+ * Icon mapping registry.
+ * Every icon reference in the app goes through ICON.<key> so icons can be
+ * swapped globally (either to a custom asset image or a different Lucide icon)
+ * without touching component code.
+ *
+ * Fallback: Lucide React icons (only used until a custom asset is supplied).
+ */
+import {
+  LayoutDashboard,
+  Wallet,
+  Package,
+  BarChart3,
+  Settings,
+  Store,
+  Users,
+  ShieldCheck,
+  Snowflake,
+  FileClock,
+  History,
+  Receipt,
+  Boxes,
+  MessageCircle,
+  Coffee,
+  ChefHat,
+  ChefHat as ChefHat2,
+  Bell,
+  Search,
+  Plus,
+  ChevronRight,
+  ChevronLeft,
+  X,
+  Check,
+  AlertTriangle,
+  TrendingUp,
+  TrendingDown,
+  QrCode,
+  LogOut,
+  Filter,
+  Download,
+  Camera,
+  Radio,
+  type LucideIcon,
+} from "lucide-react";
+
+export const ICON: Record<string, LucideIcon> = {
+  dashboard: LayoutDashboard,
+  finance: Wallet,
+  inventory: Package,
+  report: BarChart3,
+  admin: Settings,
+  gerai: Store,
+  spg: Users,
+  checker: ShieldCheck,
+  esKristal: Snowflake,
+  audit: FileClock,
+  history: History,
+  arsipTransaksi: Receipt,
+  arsipLogistik: Boxes,
+  pesan: MessageCircle,
+  menu: Coffee,
+  kitchen: ChefHat,
+  notification: Bell,
+  search: Search,
+  add: Plus,
+  chevronRight: ChevronRight,
+  chevronLeft: ChevronLeft,
+  close: X,
+  check: Check,
+  warning: AlertTriangle,
+  up: TrendingUp,
+  down: TrendingDown,
+  qr: QrCode,
+  logout: LogOut,
+  filter: Filter,
+  download: Download,
+  camera: Camera,
+  monitoring: Radio,
+  kitchenHat: ChefHat2,
+};
+
+export type IconKey = keyof typeof ICON;

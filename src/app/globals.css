@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    background-color: #FAFAFA;
+    color: #333333;
+    font-size: 14px;
+    line-height: 20px;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  button {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+@layer utilities {
+  .px-safe {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .pt-safe {
+    padding-top: max(20px, env(safe-area-inset-top));
+  }
+}
