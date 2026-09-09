@@ -20,7 +20,7 @@ export function BottomNavigation() {
 
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 z-30 mx-auto max-w-mobile bg-white border-t border-black/[0.06]"
+      className="fixed bottom-0 left-0 right-0 z-50 mx-auto max-w-mobile bg-surface/90 backdrop-blur-xl border-t border-primary/[0.10] shadow-[0_-10px_30px_rgba(30,82,55,0.08)]"
       style={{ paddingBottom: "34px" }}
     >
       <div className="flex items-stretch justify-between px-2" style={{ height: "72px" }}>
@@ -31,12 +31,12 @@ export function BottomNavigation() {
             <Link
               key={item.key}
               href={item.href}
-              className="flex-1 flex flex-col items-center justify-center gap-1 min-h-[44px] relative"
+              className="flex-1 flex flex-col items-center justify-center gap-1 min-h-[44px] relative transition-colors"
             >
               {active && (
                 <motion.div
                   layoutId="nav-indicator"
-                  className="absolute top-0 h-0.5 w-8 rounded-full bg-primary"
+                  className="absolute top-0 h-1 w-9 rounded-full bg-primary"
                 />
               )}
               <IconAsset

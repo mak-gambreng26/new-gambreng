@@ -23,14 +23,14 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: "#008438",
+  themeColor: "#0A6B45",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="id" className={inter.variable}>
       <body className="font-sans bg-background text-body min-h-screen">
-        <div className="mx-auto max-w-mobile min-h-screen bg-background relative">
+        <div className="mx-auto max-w-mobile min-h-screen bg-background relative overflow-x-hidden">
           {children}
         </div>
       </body>

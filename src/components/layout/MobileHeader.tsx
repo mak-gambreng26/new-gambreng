@@ -23,12 +23,12 @@ export function MobileHeader({
   showNotification = false,
 }: MobileHeaderProps) {
   return (
-    <header className="pt-safe pb-4 flex items-center justify-between min-h-[44px]">
+    <header className="sticky top-0 z-40 -mx-5 px-5 pt-safe pb-3 flex items-center justify-between min-h-[72px] bg-background/90 backdrop-blur-xl border-b border-primary/[0.08] shadow-[0_8px_24px_rgba(26,88,57,0.05)]">
       <div className="flex items-center gap-2">
         {showBack && (
           <Link
             href={backHref}
-            className="flex items-center justify-center h-11 w-11 -ml-2 rounded-full active:bg-black/5"
+            className="flex items-center justify-center h-11 w-11 -ml-2 rounded-full transition-colors active:bg-primary/[0.08]"
             aria-label="Kembali"
           >
             <ChevronLeft size={22} className="text-body" />
@@ -43,15 +43,15 @@ export function MobileHeader({
       <div className="flex items-center gap-3">
         {showNotification && (
           <button
-            className="relative flex items-center justify-center h-11 w-11 rounded-full bg-secondary active:opacity-80"
+            className="relative flex items-center justify-center h-11 w-11 rounded-full bg-secondary shadow-soft transition-transform active:scale-95"
             aria-label="Notifikasi"
           >
             <Bell size={18} className="text-primary" />
-            <span className="absolute top-2 right-2.5 h-2 w-2 rounded-full bg-danger" />
+            <span className="absolute top-2 right-2.5 h-2 w-2 rounded-full bg-danger ring-2 ring-secondary" />
           </button>
         )}
         {showLogo && (
-          <div className="h-10 w-10 rounded-full bg-secondary flex items-center justify-center overflow-hidden">
+          <div className="h-10 w-10 rounded-full bg-secondary ring-1 ring-primary/[0.10] flex items-center justify-center overflow-hidden">
             <Image
               src={ASSETS.brand.logo}
               alt="Mak-Gambreng"

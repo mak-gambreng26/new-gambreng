@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { ChevronLeft, Download } from "lucide-react";
-import { AppCard } from "@/components/ui/AppCard";
 import { geraiList } from "@/services/mock/gerai.mock";
 import { menuList } from "@/services/mock/menu.mock";
 import { RevenueChart } from "@/components/charts/RevenueChart";
@@ -15,8 +14,8 @@ export default function MonitoringPage() {
   const totalCup = geraiBuka.reduce((a, g) => a + g.cupHariIni, 0);
 
   return (
-    <div className="min-h-screen bg-monitoring text-white px-safe pt-safe pb-10">
-      <header className="flex items-center justify-between mb-6">
+    <div className="min-h-screen bg-monitoring text-white px-safe pb-10">
+      <header className="sticky top-0 z-40 -mx-5 px-5 pt-safe pb-4 flex items-center justify-between mb-6 bg-monitoring/90 backdrop-blur-xl border-b border-white/[0.06]">
         <Link href="/dashboard" className="h-11 w-11 flex items-center justify-center -ml-2">
           <ChevronLeft size={22} />
         </Link>
@@ -79,11 +78,11 @@ export default function MonitoringPage() {
           {geraiList.map((g) => (
             <div key={g.id} className="bg-white/5 rounded-card p-4 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className={`h-2 w-2 rounded-full ${g.status === "buka" ? "bg-success" : "bg-white/20"}`} />
+                <span className={"h-2 w-2 rounded-full " + (g.status === "buka" ? "bg-success" : "bg-white/20")} />
                 <span>{g.nama}</span>
               </div>
               <span className="text-white/60 text-caption">
-                {g.status === "buka" ? `${formatRupiah(g.omzetHariIni)} · ${g.cupHariIni} cup` : "Tutup"}
+                {g.status === "buka" ? formatRupiah(g.omzetHariIni) + " · " + g.cupHariIni + " cup" : "Tutup"}
               </span>
             </div>
           ))}

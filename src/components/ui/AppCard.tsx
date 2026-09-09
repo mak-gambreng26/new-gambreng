@@ -10,7 +10,7 @@ export const AppCard = forwardRef<HTMLDivElement, AppCardProps>(
     <div
       ref={ref}
       className={cn(
-        "bg-white rounded-card shadow-card border border-black/[0.03]",
+        "bg-surface/95 rounded-card shadow-card border border-primary/[0.08]",
         padded && "p-4",
         className
       )}
